@@ -5,20 +5,15 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Iniciando Aplicativo de Musica (Versao Completa c/ SQL)...\n");
 
-        // Instanciando a implementação de Usuario
         UsuarioDao usuarioDao = new UsuarioImpl();
-
-        // 1. Criando e Inserindo um novo Usuário
-        System.out.println("Testando a inserção no banco de dados...");
         Usuario novoUsuario = new Usuario();
-        novoUsuario.setNome("Marcos Comparotto");
-        novoUsuario.setEmail("marcos.comparotto@exemplo.com"); // Mude o e-mail se rodar mais de uma vez (é UNIQUE)
+        novoUsuario.setNome("Comparotto");
+        novoUsuario.setEmail("marcos.gomes@exemplo.com");
 
         usuarioDao.inserir(novoUsuario);
 
-        // 2. Buscando e Listando todos os Usuários do banco
+
         System.out.println("\n--- Lista de Usuários no Banco ---");
         List<Usuario> usuarios = usuarioDao.listarTodos();
 
